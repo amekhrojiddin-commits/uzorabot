@@ -55,7 +55,7 @@ _cookies_path = os.path.join(tempfile.gettempdir(), "yt_cookies.txt")
 _raw_env = os.environ.get("YOUTUBE_COOKIES", "")
 if _raw_env:
     with open(_cookies_path, "w") as _f:
-        _f.write(base64.b64decode(_raw_env).decode("utf-8"))
+        _f.write(base64.b64decode(_raw_env + "==").decode("utf-8"))
 else:
     with open(_cookies_path, "wb") as _f:
         _f.write(base64.b64decode(_COOKIES_B64))
