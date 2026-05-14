@@ -1,8 +1,10 @@
 [phases.setup]
-nixPkgs = ["python311", "ffmpeg-full"]
+nixPkgs = ["ffmpeg-full"]
 
 [phases.install]
-cmds = ["pip install --no-cache-dir --force-reinstall python-telegram-bot==20.7 yt-dlp httpx==0.27.0"]
+cmds = [
+  "pip install --no-cache-dir --force-reinstall python-telegram-bot==20.7 yt-dlp"
+]
 
 [start]
 cmd = "python main.py"
